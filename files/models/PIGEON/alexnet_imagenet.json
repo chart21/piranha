@@ -1,0 +1,119 @@
+{
+    "name": "AlexNet_CryptGpu",
+    "dataset": "ImageNet",
+    "batch_size": 128,
+    "input_size": 150528,
+    "num_classes": 1000,
+    "model": [
+        {
+            "layer": "cnn",
+            "input_hw": [224, 224],
+            "in_channels": 3,
+            "out_channels": 96,
+            "filter_hw": [11, 11],
+            "stride": 4,
+            "padding": 9
+        },
+        {
+            "layer": "relu",
+            "input_dim": 290400
+        },
+        {
+            "layer": "averagepool",
+            "input_hw": [55, 55],
+            "in_channels": 96,
+            "pool_hw": [3, 3],
+            "stride": 2
+        },
+        {
+            "layer": "cnn",
+            "input_hw": [27, 27],
+            "in_channels": 96,
+            "out_channels": 256,
+            "filter_hw": [5, 5],
+            "stride": 1,
+            "padding": 1
+        },
+        {
+            "layer": "relu",
+            "input_dim": 186624
+        },
+        {
+            "layer": "averagepool",
+            "input_hw": [27, 27],
+            "in_channels": 256,
+            "pool_hw": [2, 2],
+            "stride": 1
+        },
+        {
+            "layer": "cnn",
+            "input_hw": [26, 26],
+            "in_channels": 256,
+            "out_channels": 384,
+            "filter_hw": [3, 3],
+            "stride": 1,
+            "padding": 1
+        },
+        {
+            "layer": "relu",
+            "input_dim": 258048
+        },
+        {
+            "layer": "cnn",
+            "input_hw": [26, 26],
+            "in_channels": 384,
+            "out_channels": 384,
+            "filter_hw": [3, 3],
+            "stride": 1,
+            "padding": 1
+        },
+        {
+            "layer": "relu",
+            "input_dim": 258048
+        },
+        {
+            "layer": "cnn",
+            "input_hw": [26, 26],
+            "in_channels": 384,
+            "out_channels": 256,
+            "filter_hw": [3, 3],
+            "stride": 1,
+            "padding": 1
+        },
+        {
+            "layer": "relu",
+            "input_dim": 173056
+        },
+        {
+            "layer": "averagepool",
+            "input_hw": [26, 26],
+            "in_channels": 256,
+            "pool_hw": [4, 4],
+            "stride": 4
+        },
+        {
+            "layer": "fc",
+            "input_dim": 9216,
+            "output_dim": 4096
+        },
+        {
+            "layer": "relu",
+            "input_dim": 4096
+        },
+        {
+            "layer": "fc",
+            "input_dim": 4096,
+            "output_dim": 4096
+        },
+        {
+            "layer": "relu",
+            "input_dim": 4096
+        },
+        {
+            "layer": "fc",
+            "input_dim": 4096,
+            "output_dim": 1000
+        }
+    ]
+}
+

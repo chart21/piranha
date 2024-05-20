@@ -1,0 +1,78 @@
+{
+    "name": "ResNet101",
+    "dataset": "ImageNet",
+    "batch_size": 128,
+    "input_size": 150528,
+    "num_classes": 1000,
+    "model": [
+        {
+            "layer": "cnn",
+            "input_hw": [224, 224],
+            "in_channels": 3,
+            "out_channels": 64,
+            "filter_hw": [7, 7],
+            "stride": 2,
+            "padding": 3
+        },
+        {
+            "layer": "ln",
+            "input_dim": 200704
+        },
+        {
+            "layer": "averagepool",
+            "input_hw": [112, 112],
+            "in_channels": 64,
+            "pool_hw": [3, 3],
+            "stride": 2
+        },
+        {
+            "layer": "res",
+            "input_hw": [56, 56],
+            "in_planes": 64,
+            "out_planes": 256,
+            "num_blocks": 3,
+            "stride": 1,
+            "expansion": 4
+        },
+        {
+            "layer": "res",
+            "input_hw": [56, 56],
+            "in_planes": 256,
+            "out_planes": 512,
+            "num_blocks": 4,
+            "stride": 2,
+            "expansion": 4
+        },
+        {
+            "layer": "res",
+            "input_hw": [28, 28],
+            "in_planes": 512,
+            "out_planes": 1024,
+            "num_blocks": 23,
+            "stride": 2,
+            "expansion": 4
+        },
+        {
+            "layer": "res",
+            "input_hw": [14, 14],
+            "in_planes": 1024,
+            "out_planes": 2048,
+            "num_blocks": 3,
+            "stride": 2,
+            "expansion": 4
+        },
+        {
+            "layer": "averagepool",
+            "input_hw": [7, 7],
+            "in_channels": 2048,
+            "pool_hw": [7, 7],
+            "stride": 1
+        },
+        {
+            "layer": "fc",
+            "input_dim": 2048,
+            "output_dim": 1000 
+        }
+    ]
+}
+
