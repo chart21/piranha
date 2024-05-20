@@ -61,10 +61,10 @@ sudo pip install torch torchvision
 python download_{mnist, cifar10}.py
 ```
 
-4. Build Piranha at a specific fixed point precision and for a particular protocol. 3-party replicated secret sharing is the default and doesn't require a command-line flag.
+4. Build Piranha at a specific fixed point precision and for a particular protocol. 3-party replicated secret sharing and 64-bit is the default and doesn't require a command-line flag.
 
 ```
-make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=<NBITS> -D{TWOPC,FOURPC}"
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=<NBITS> -D{TWOPC,FOURPC}" TARGET={16,32,64}
 ```
 
 ## Run
