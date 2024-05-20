@@ -3,22 +3,22 @@ BINARY = piranha
 DEBUG_BINARY = piranha-debug
 BUILD_DIR = build
 DEBUG_DIR = debug
-CUDA_VERSION = 11.5
-CUTLASS_PATH = ext/cutlass
+CUTLASS_PATH = ~/cutlass #replace with your Cutlass path
+CUDA_PATH=/usr/local/cuda-12.1 #replace with your CUDA path
 
 # Compiler and flags
-CXX = /usr/local/cuda-$(CUDA_VERSION)/bin/nvcc
+CXX = $(CUDA_PATH)/bin/nvcc
 FLAGS := -Xcompiler="-O3,-w,-pthread,-msse4.1,-maes,-msse2,-mpclmul,-fpermissive,-fpic" -Xcudafe "--diag_suppress=declared_but_not_referenced" --std=c++14
 DEBUG_FLAGS := -Xcompiler="-O0,-g,-w,-pthread,-msse4.1,-maes,-msse2,-mpclmul,-fpermissive,-fpic" -Xcudafe "--diag_suppress=declared_but_not_referenced" --std=c++14
 PIRANHA_FLAGS :=
 
 # Include and library directories
-OBJ_INCLUDES := -I '/usr/local/cuda-$(CUDA_VERSION)/include' \
+OBJ_INCLUDES := -I '$(CUDA_PATH)/include' \
                 -I '$(CUTLASS_PATH)/include' \
                 -I '$(CUTLASS_PATH)/tools/util/include' \
                 -I 'include'
 LIBS := -lcrypto -lssl -lcudart -lcuda -lgtest -lcublas
-INCLUDES := $(OBJ_INCLUDES) -L./ -L/usr/local/cuda-$(CUDA_VERSION)/lib64 -L$(CUTLASS_PATH)/build/tools/library
+INCLUDES := $(OBJ_INCLUDES) -L./ -L$(CUDA_PATH)/lib64 -L$(CUTLASS_PATH)/build/tools/library
 
 # Source files
 VPATH = src/:src/gpu:src/nn:src/mpc:src/util:src/test
