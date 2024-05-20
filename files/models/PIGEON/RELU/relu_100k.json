@@ -1,0 +1,13 @@
+{
+    "name": "RELU_100k",
+    "dataset": "NONE",
+    "batch_size": 128,
+    "input_size": 100000,
+    "num_classes": 100000,
+    "model": [
+        {
+            "layer": "relu",
+            "input_dim": 100000
+        }
+    ]
+}

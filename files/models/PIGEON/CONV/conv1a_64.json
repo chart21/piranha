@@ -1,0 +1,19 @@
+{
+    "name": "Conv1a_64",
+    "dataset": "NONE",
+    "batch_size": 128,
+    "input_size": 12288,
+    "num_classes": 10,
+    "model": [
+        {
+            "layer": "cnn",
+            "input_hw": [64, 64],
+            "in_channels": 3,
+            "out_channels": 96,
+            "filter_hw": [11, 11],
+            "stride": 4,
+            "padding": 2
+        }
+    ]
+}
+
