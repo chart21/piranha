@@ -64,7 +64,15 @@ python download_{mnist, cifar10}.py
 4. Build Piranha at a specific fixed point precision and for a particular protocol. 3-party replicated secret sharing and 64-bit is the default and doesn't require a command-line flag.
 
 ```
-make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=<NBITS> -D{TWOPC,FOURPC}" TARGET={16,32,64}
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=<NBITS> -D{TWOPC,FOURPC}" BITLENGTH={16,32,64} BINARY piranha{16,32,64}_{2,3,4}pc
+```
+
+For instance to make 3-PC and 4PC with bitlengths 32 and 64 and 12 fractional bits, run:
+```
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=12" BITLENGTH=32 BINARY piranha32_3pc
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=12" BITLENGTH=64 BINARY piranha64_3pc
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=12 -D FOURPC" BITLENGTH=32 BINARY piranha32_4pc
+make -j8 PIRANHA_FLAGS="-DFLOAT_PRECISION=12 -D FOURPC" BITLENGTH=64 BINARY piranha64_4pc
 ```
 
 ## Run

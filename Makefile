@@ -1,5 +1,4 @@
 # General configuration
-BINARY = piranha
 DEBUG_BINARY = piranha-debug
 BUILD_DIR = build
 DEBUG_DIR = debug
@@ -29,14 +28,14 @@ DEBUG_OBJ_FILES = $(addprefix $(DEBUG_DIR)/, $(notdir $(SRC_CPP_FILES:.cpp=.o)))
 HEADER_FILES = $(wildcard src/*.h src/**/*.h src/*.cuh src/**/*.cuh src/*.inl src/**/*.inl)
 
 # Choose the main file to compile based on the TARGET variable
-ifeq ($(TARGET), 32)
+ifeq ($(BITLENGTH), 32)
 MAIN_FILE = main32.cu
 OBJ_FILES += $(BUILD_DIR)/main32.o
-else ifeq ($(TARGET), 16)
+else ifeq ($(BITLENGTH), 16)
 MAIN_FILE = main16.cu
 OBJ_FILES += $(BUILD_DIR)/main16.o
 else
-# Default to 64 if TARGET is not specified or is set to 64
+# Default to 64 if BITLENGTH is not specified or is set to 64
 MAIN_FILE = main64.cu
 OBJ_FILES += $(BUILD_DIR)/main64.o
 endif
