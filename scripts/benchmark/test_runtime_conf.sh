@@ -1,3 +1,5 @@
+#!/bin/bash
+
 helpFunction()
 {
    echo "Script to test the runtime of single inferences for different configurations"
@@ -90,7 +92,7 @@ if [ "$O_NUM_PLAYERS" -eq "4" ]; then
     fi
 fi
 
-functions=()
+declare -a functions=()
 
 # If FILE is a directory, then loop over all files in the directory, otherwise just loop over file
 if [ -d "$FILE" ]; then
