@@ -27,7 +27,7 @@
     "run_name": "piranha_localhost",
 
     "_desc_network": "Path to NN architecture to use for the run",
-    "network": "files/models/alexnet-cifar10.json",
+    "network": "files/models/PIGEON/IMAGENET/vgg_imagenet.json",
 
     "_desc_custom_epochs": "Enable custom number of epochs. Otherwise set by size of learning rate schedule",
     "custom_epochs": true,
@@ -39,13 +39,13 @@
     "custom_iterations": true,
 
     "_desc_custom_iteration_count": "Number of iterators to train per epoch, if custom_iterations is set",
-    "custom_iteration_count": 2,
+    "custom_iteration_count": 10,
 
     "_desc_custom_batch_size": "Enable custom batch size. Otherwise set by architecture configuration.",
     "custom_batch_size": true,
 
     "_desc_custom_batch_size_count": "Desired custom batch size",
-    "custom_batch_size_count": 16,
+    "custom_batch_size_count": 1,
 
     "_desc_nn_seed": "Seed for NN initialization",
     "nn_seed": 343934585,
