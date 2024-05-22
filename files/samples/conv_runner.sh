@@ -1,10 +1,10 @@
 #!/bin/bash
 #get p from command line argument
-p=$1
+p=$3
 #get b from command line argument
 b=$2
 #get n from command line argument
-n=$3
+n=$1
 
 if [ $b -eq 32 ] && [ $n -eq 3 ]; then
     CUDA_VISIBLE_DEVICES=0 ./piranha32_3 -p $p -c files/samples/benchmark_conv.json
