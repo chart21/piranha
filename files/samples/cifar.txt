@@ -1,0 +1,8 @@
+files/models/PIGEON/CIFAR10/alexnet_32.json
+files/models/PIGEON/CIFAR10/vgg_cifar10.json
+files/models/PIGEON/CIFAR10/resnet18_cifar10.json
+files/models/PIGEON/CIFAR10/resnet50_cifar10.json
+files/models/PIGEON/CIFAR10/resnet101_cifar10.json
+files/models/PIGEON/CIFAR10/resnet152_cifar10.json
+files/models/PIGEON/CIFAR10/lenet_mnist.json
+files/models/PIGEON/CIFAR10/alexnet_cifar10.json

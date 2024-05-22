@@ -1,0 +1,13 @@
+files/models/PIGEON/CONV/conv1a_32.json
+files/models/PIGEON/CONV/conv1a_64.json
+files/models/PIGEON/CONV/conv1a_128.json
+files/models/PIGEON/CONV/conv1a_256.json
+files/models/PIGEON/CONV/conv1a_512.json
+files/models/PIGEON/CONV/conv1b.json
+files/models/PIGEON/CONV/conv1c_1.json
+files/models/PIGEON/CONV/conv1c_2.json
+files/models/PIGEON/CONV/conv1c_4.json
+files/models/PIGEON/CONV/conv1c_8.json
+files/models/PIGEON/CONV/conv1c_16.json
+files/models/PIGEON/CONV/conv1c_32.json
+files/models/PIGEON/CONV/conv1c_64.json

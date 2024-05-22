@@ -1,0 +1,6 @@
+files/models/PIGEON/IMAGENET/vgg_imagenet.json
+files/models/PIGEON/IMAGENET/resnet18_imagenet.json
+files/models/PIGEON/IMAGENET/resnet50_imagenet.json
+files/models/PIGEON/IMAGENET/resnet101_imagenet.json
+files/models/PIGEON/IMAGENET/resnet152_imagenet.json
+files/models/PIGEON/IMAGENET/alexnet_imagenet.json
